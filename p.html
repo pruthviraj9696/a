@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=div.main, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{color: rgb(8, 7, 7);
+            text-align: center;
+            width: 100vw;
+            height: 100vh;
+        background-color: rgb(12, 12, 12);
+        display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        .item{background-color: black;
+            color: white;
+            box-shadow: 0 0 30px red;
+           width: 18%;
+           height: 45%;
+           border-radius: 20px;
+        }
+        #result{color: aliceblue;
+            background-color: green;
+            width: 80px;
+            border-radius: 20px;
+            padding: 8px;
+        }
+        .in{width: 170px;
+        border: none;
+    padding: 6px;
+    }
+        .in:hover{
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="item">
+            <h2>GRADE CALCY</h2>
+            
+            <input type="text" class="in" id="css" name="" placeholder="CSS marks"> <br> <br>
+            <input type="text" class="in" id="html" name="" placeholder="HTML marks"> <br><br>
+            <input type="text" class="in" id="js" name="" placeholder="JAVASCRIPT marks"> <br><br>
+            <input type="text" class="in" id="react" name="" placeholder="REACT marks"> <br><br>
+            <div class="result">
+                <input type="button" id="result" value="Result" onclick="calcy()">
+            </div>
+            <p id="Show"></p>
+        </div>
+    </div>
+
+    <script>
+       const calcy = ()=>{
+            const cs =document.getElementById('css').value
+            const ht =document.getElementById('html').value
+            const script =document.getElementById('js').value
+            const rect =document.getElementById('react').value
+         
+          const total = parseFloat(cs) + parseFloat(ht) + parseFloat(script) + parseFloat(rect);
+           alert(total);
+           
+           const percentage = (total/400)*100 ;
+           alert(percentage);
+
+        //    let grade ="";
+
+        //    if(80 >= percentage && percentage <= 100){
+        //     grade ="A";
+        //    }
+
+        //    else if(60 >= percentage && percentage <= 79){
+        //     grade ="B";
+        //    }
+
+        //    else if(40 >= percentage && percentage <= 59){
+        //     grade ="C";
+        //    }
+
+        //    else{grade="F";}
+
+
+           const show =document.getElementById('Show').innerHTML =`Total ${total}<br>Percentage ${percentage}%`
+        }
+       
+    </script>
+</body>
+</html>

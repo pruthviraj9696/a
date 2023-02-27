@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="app-form">
+        <p>student grade calcy</p>
+        <input
+          type="text"
+          class="app-form-control"
+          placeholder="web programming"
+          id="web"
+        />
+        <input
+          type="text"
+          class="app-form-control"
+          placeholder="maths"
+          id="maths"
+        />
+        <input
+          type="text"
+          class="app-form-control"
+          placeholder="computers"
+          id="computers"
+        />
+        <input
+          type="text"
+          class="app-form-control"
+          placeholder="english"
+          id="english"
+        />
+        <div class="percentage">
+          <input
+            type="button"
+            value="showpercentage"
+            name=""
+            class="app-form-button"
+            onclick="calcy()"
+          />
+        </div>
+      </div>
+      <div class="showData">
+        <p id="showdata"></p>
+      </div>
+    </div>
+    <script>
+      const calcy = () => {
+        let web = document.getElementById("web").value;
+        let maths = document.getElementById("maths").value;
+        let computers = document.getElementById("computers").value;
+        let english = document.getElementById("english").value;
+        let total =
+          parseFloat(web) +
+          parseFloat(maths) +
+          parseFloat(computers) +
+          parseFloat(english);
+
+        alert(total);
+
+        let percentage = (total / 400) * 100;
+        alert(percentage);
+        let grade = "";
+        if (100 <= percentage && 80 >= percentage) {
+          grade = "a";
+        } else if (60 >= percentage && 79 <= percentage) {
+          grade = "b";
+        } else if (40 >= percentage && 59 <= percentage) {
+          grade = "c";
+        } else {
+          grade = "f";
+        }
+        document.getElementById("showdata").innerHTML = `your ${total}`;
+      };
+    </script>
+  </body>
+</html>
